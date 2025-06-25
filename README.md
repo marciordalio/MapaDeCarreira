@@ -13,7 +13,7 @@ O mapa funciona como uma bússola que orienta meus estudos, práticas e decisõe
 
 ---
 
-## 💡 Propósito
+##  Propósito
 
 > Mais do que um plano de estudos, este projeto é uma ferramenta de autogestão de carreira.
 
@@ -21,9 +21,9 @@ Ele me ajuda a acompanhar meu progresso, identificar prioridades e manter o foco
 
 ---
 
-## 🚧 Status
+##  Status
 
-🛠️ Em constante atualização conforme novas metas surgem e caminhos evoluem.
+ Em constante atualização conforme novas metas surgem e caminhos evoluem.
 
 ---
 
