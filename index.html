@@ -26,6 +26,95 @@
       type="image/x-icon"
     />
     <style>
+      body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #181818;
+      color: #f5f5f7;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.light-mode {
+      background: #f5f5f7;
+      color: #222;
+    }
+    /* Minimalista: cards e botões */
+    .card, .button, .especialidade span {
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #0001;
+      border: none;
+    }
+    .button, a.button {
+      background: #111;
+      color: #fff;
+      padding: 0.7em 2em;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: background 0.2s;
+      box-shadow: none;
+    }
+    .button:hover, a.button:hover {
+      background: #222;
+    }
+    body.light-mode .card, body.light-mode .button, body.light-mode a.button {
+      background: #fff;
+      color: #222;
+      box-shadow: 0 2px 16px #0001;
+    }
+    body.light-mode .especialidade span {
+      background: #fff;
+      color: #111;
+      border: 1px solid #222;
+    }
+    .especialidade span {
+      background: #222;
+      color: #fff;
+      padding: 0.2em 1em;
+      font-size: 1em;
+      margin: 0.2em 0;
+      border: none;
+    }
+    /* Minimalista: inputs */
+    input, textarea {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 0.6em;
+      background: #fff;
+      color: #222;
+      font-size: 1em;
+    }
+    body:not(.light-mode) input, body:not(.light-mode) textarea {
+      background: #222;
+      color: #fff;
+      border: 1px solid #444;
+    }
+    /* Minimalista: header */
+    header h2, header h1, header h4 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5em;
+    }
+    /* Minimalista: links */
+    a {
+      color: #00856F;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #005f4b;
+    }
+    /* LinkedIn icon next to text */
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      font-weight: 500;
+    }
+    .linkedin-link img {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+      border-radius: 4px;
+      box-shadow: none;
+    }
       #projects {
         background-color: var(--secundary-color);
         color: var(--paragraph);
@@ -209,6 +298,128 @@
       section {
         padding: 6rem 0 !important;
       }
+      body.light-mode {
+  background: #f8f8f8;
+  color: #222;
+}
+
+body.light-mode #projects {
+  background: #fff;
+  color: #222;
+}
+
+body.light-mode header h2,
+body.light-mode .typing {
+  color: #111 !important;
+}
+
+body.light-mode .card {
+  background: #fff;
+  box-shadow: 0 2px 12px #0001;
+  border-radius: 1.2rem;
+}
+
+body.light-mode .card h3 {
+  color: #222;
+}
+
+body.light-mode .card p {
+  color: #444;
+}
+
+body.light-mode nav#navigation,
+body.light-mode footer {
+  background: #fff;
+  color: #222;
+  box-shadow: 0 1px 8px #0001;
+}
+
+body.light-mode .button,
+body.light-mode a.button {
+  background: #222;
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.8em 2em;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+body.light-mode .button:hover,
+body.light-mode a.button:hover {
+  background: #111;
+}
+
+body.light-mode .especialidade span {
+  background: #fff;
+  color: #111;
+  border: 1px solid #222;
+}
+
+body.light-mode input,
+body.light-mode textarea {
+  background: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+nav#navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  box-shadow: none;
+  z-index: 1000;
+  transition: box-shadow 0.4s, background 0.4s;
+  backdrop-filter: blur(12px);
+}
+body:not(.light-mode) nav#navigation {
+  background: rgba(24,24,24,0.85);
+}
+nav#navigation.scrolled {
+  box-shadow: 0 2px 16px #0001;
+  background: rgba(255,255,255,0.97);
+}
+body:not(.light-mode) nav#navigation.scrolled {
+  background: rgba(24,24,24,0.97);
+}
+#toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 2000;
+  background: none;
+}
+#toggle label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 16px #0002;
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  transition: background 0.3s;
+}
+#toggle input {
+  display: none;
+}
+.icon-sun, .icon-moon {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+#sw-checkbox:not(:checked) ~ label .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+#sw-checkbox:checked ~ label .icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
     </style>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -305,7 +516,7 @@
               </a>
             </li>
             <li>
-             
+              
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path
                     d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"
@@ -425,14 +636,15 @@
             <p>
              Sou o Marcio, 18 anos, de São Paulo. A tecnologia sempre despertou minha curiosidade, e hoje sigo transformando ideias em soluções úteis, com atenção aos detalhes e foco nas necessidades das pessoas.
 
-Estudo no Instituto PROA, onde desenvolvo habilidades em front-end e back-end com React, Node.js, Java e MySQL. Também atuo como front-end e designer UX/UI na Braille Way.
+Estudo no Instituto PROA, onde desenvolvo habilidades em front-end e back-end com React, Node.js, Java e MySQL. Também atuei como front-end e designer UX/UI na Braille Way.
 
 Fora do código, gosto de andar de bicicleta, jogar basquete, ir à praia, tocar pandeiro e, principalmente, aprender com quem está ao meu redor. Acredito que crescer é trocar experiências e estar aberto a novos olhares.
 
-Busco uma oportunidade como Dev Júnior ou Machine Learning Júnior para seguir evoluindo e contribuindo com dedicação.
+Busco uma oportunidade como Dev Júnior com 
+abertura para atuar e aprender em carreiras de IA e Segurança da Informação e seguir evoluindo e contribuindo com dedicação.
 
             </p>
-            <a class="button"   href="assets/images/Curriculo-Marcio-2.pdf" download> Baixar CV</a>
+            <a class="button"   href="assets/images/Curriculo Marcio Eduardo.pdf" download> Baixar CV</a>
           </div>
         </div>
 
@@ -609,8 +821,7 @@ criar arquiteturas escaláveis.
     </section>
 
 
-
-   <section id="projects">
+      <section id="projects">
       <div class="wrapper">
         <header>
           <h2> Lead ML Engineer</h2>
@@ -879,18 +1090,14 @@ Este plano representa minha visão de longo prazo — mas neste momento, estou d
                     />
                   </svg>
 
-                   marcioeduardo1808@outlook.com
+                   marcioordalio1808@gmail.com
                 </a>
               </li>
               <li>
-                <a href="www.linkedin.com/in/marcio-eduardo-ordalio-costa" title="Linkedin"
-                  ><img
-                   
-                 
-               
-                  />
-              Meu Linkedin</a
-                >
+      <a href="https://www.linkedin.com/in/marcio-eduardo-ordalio-costa/" title="LinkedIn" target="_blank" class="linkedin-link">
+                  <img src="./assets/images/linkedin.png" alt="Ícone do LinkedIn." />
+                </a>
+                Meu Linkedin
               </li>
             </ul>
 
@@ -909,7 +1116,7 @@ Este plano representa minha visão de longo prazo — mas neste momento, estou d
               Baixar CV
             </a>
           </div>
-        </div>
+        </div> 
 
   <div class="col-b">
           <img src="./assets/images/celular3.png" alt="Ícone de celular." />
@@ -1034,34 +1241,66 @@ Este plano representa minha visão de longo prazo — mas neste momento, estou d
         </div>
       </div>
     </footer>
+<div id="toggle">
+  <input type="checkbox" id="sw-checkbox" />
+  <label for="sw-checkbox" title="Mudar tema">
+    <span class="icon-sun">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="5" fill="#FFD600"/>
+        <g stroke="#FFD600" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </g>
+      </svg>
+    </span>
+    <span class="icon-moon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z" fill="#222"/>
+      </svg>
+    </span>
+  </label>
+</div>
+    <script>
+      const checkbox = document.getElementById('sw-checkbox');
+      const body = document.body;
 
-    <div id="toggle">
-      <input type="checkbox" id="sw-checkbox" />
-      <label for="sw-checkbox" title="Mudar tema">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-        >
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path
-            d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"
-          />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-        >
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path
-            d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"
-            fill="rgba(255,255,255,1)"
-          />
-        </svg>
-      </label>
-    </div>
+      // Estado inicial
+      if (localStorage.getItem('theme') === 'light') {
+        checkbox.checked = true;
+        body.classList.add('light-mode');
+      } else {
+        checkbox.checked = false;
+        body.classList.remove('light-mode');
+      }
+
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          body.classList.add('light-mode');
+          localStorage.setItem('theme', 'light');
+        } else {
+          body.classList.remove('light-mode');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    </script>
+    <script>
+  const nav = document.getElementById('navigation');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      nav.classList.add('show');
+    } else {
+      nav.classList.remove('show');
+    }
+    lastScroll = window.scrollY;
+  });
+</script>
   </body>
 </html>
