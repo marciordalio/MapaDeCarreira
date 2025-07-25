@@ -420,17 +420,34 @@ body:not(.light-mode) nav#navigation.scrolled {
   opacity: 1;
   transform: rotate(0deg) scale(1);
 }
+.circle-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 340px;
+  background: #2f8cf0;
+  border-radius: 50%;
+  z-index: 0;
+ 
+  pointer-events: none;
+}
+.col-b img {
+  position: relative;
+  z-index: 1;
+}
     </style>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
     <script type="module" src="./assets/js/main.js" defer></script>
 
-    <title>Marcio // MapaDeCarreira</title>
+    <title>Mapa De Carreira</title>
   </head>
   <body>
     <nav id="navigation">
       <div class="wrapper">
-        <a class="logo close" href="#home"> Marcio Eduardo </a>
+        <a class="logo close" href="#home"> </a>
 
         <div class="menu">
           <ul>
@@ -602,6 +619,7 @@ body:not(.light-mode) nav#navigation.scrolled {
         </div>
 
         <div class="col-b">
+           <div class="circle-bg"></div>
           <img
             src="assets/images/notebook.png"
             alt="Imagem de um notebook."
@@ -1084,7 +1102,7 @@ Sigo comprometido com cada etapa dessa jornada.
               class="button"
               title="Baixe meu CV"
               target="_blank"
-               href="assets/images/Curriculo-Marcio-2.pdf" download
+               href="assets/images/Curriculo Marcio Eduardo.pdf" download
             >
               
                 <path
